@@ -1,0 +1,146 @@
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+
+.list {
+  padding: 1em 0;
+  &__item {
+    position: relative;
+    color: white;
+  }
+}
+
+.pt-card {
+  &--base {
+    color: black;
+    display: block;
+    margin-bottom: 0.75em;
+    padding: 0px;
+    border-color: transparent !important;
+    @include box-shadow-base;
+  }
+  &--link {
+    &:hover, &:focus {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  &__circle {
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.75em;
+    vertical-align: middle;
+  }
+  &__text {
+    padding: .10em .5em;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.75em;
+    vertical-align: middle;
+    &--admin {
+      background-color: #db3737;
+      color: white;
+    }
+    &--trainer {
+      background-color: #137cbd;
+      color: white;
+    }
+    &--member {
+      background-color: #0f9960;
+      color: white;
+    }
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    border-bottom: 1px solid $lightGrey;
+    h4 {
+      padding: 1em;
+      font-weight: $fontRegular;
+      margin: 0;
+    }
+  }
+  &__edit {
+    margin-left: 0.5em;
+  }
+  &__delete {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+  &__body {
+    position: relative;
+    padding: 1em;
+    color: inherit;
+    font-size: 1.4rem;
+  }
+  &__item {
+    padding: 1em;
+    font-size: 1.4rem;
+    .pt-control {
+      margin-bottom: 0px;
+    }
+  }
+  &--list {
+    &-list {
+      padding: 10px
+    }
+  }
+}
+
+.tile {
+  padding: 1.25em;
+  border-radius: 3px;
+  display:block;
+  &--link {
+    &:hover, &:focus {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  &__header {
+    font-size: 2.2rem;
+    font-weight: $fontBold;
+  }
+  &__content {
+    font-size: 1.6rem;
+  }
+  &--elevation {
+    @include box-shadow-1;
+    transition-property: color,background-color,box-shadow,transform;
+    transition-duration: .15s;
+    &:hover, &:focus {
+      @include box-shadow-2;
+      transform: translateY(-2px);
+    }
+  }
+  &--blue {
+    background-color: $blue;
+    color: white;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  &--purple {
+    background-color: $purple;
+    color: white;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  &--orange {
+    background-color: $darkOrange;
+    color: white;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+}
+
+.tileLayout {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}

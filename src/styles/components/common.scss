@@ -1,0 +1,395 @@
+@import '../config/fonts'; // colors, fonts etc...
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+* {
+    @include font-smoothing;
+}
+html {
+    font-size: 62.5%;
+    height: 100%
+}
+body {
+    font: {
+        size: 1.6rem;
+        family: $fontFamily;
+        weight: $fontRegular;
+    }
+    background-color: $colorBackground;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0 0 0.25em 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $fontBold;
+}
+h1 {
+    @include MQ(S) {
+        font-size: 2.8rem;
+    }
+    @include MQ(M) {
+        font-size: 3.2rem;
+    }
+    @include MQ(L) {
+        font-size: 3.6rem;
+    }
+}
+h2 {
+    @include MQ(S) {
+        font-size: 2.4rem;
+    }
+    @include MQ(M) {
+        font-size: 2.6rem;
+    }
+    @include MQ(L) {
+        font-size: 3.0rem;
+    }
+}
+h3 {
+    @include MQ(S) {
+        font-size: 2.2rem;
+    }
+    @include MQ(M) {
+        font-size: 2.2rem;
+    }
+    @include MQ(L) {
+        font-size: 2.4rem;
+    }
+}
+h4 {
+    @include MQ(S) {
+        font-size: 1.8rem;
+    }
+    @include MQ(M) {
+        font-size: 1.8rem;
+    }
+    @include MQ(L) {
+        font-size: 1.8rem;
+    }
+}
+h5 {
+    font-size: 1.6rem;
+}
+p {
+    line-height: 26px;
+    color: $colorBodyFont;
+}
+.font {
+  &--regular {
+    font-weight: $fontRegular;
+  }
+  &--small {
+    font-size: 1.55rem;
+    &--bold {
+      font-weight: 600;
+    }
+  }
+}
+
+.subheading {
+  &--white {
+    color: white;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bg {
+  &--white {
+    background-color: white;
+  }
+  &--main {
+    background-color: $colorBackground;
+  }
+}
+
+// layout
+.main {
+  position: relative;
+  &__nav {
+    background-color: white;
+    @include box-shadow-nav;
+  }
+  &__side {
+    position: fixed;
+    top: $topNavHeight;
+    left: 0;
+    width: $sideNavWidth;
+    height: 100%;
+    box-shadow: -1px 0 8px 0 rgba(0, 0, 0, 0.15);
+    z-index: $z-index-1;
+    &__space {
+      padding: 1em;
+    }
+  }
+  &__content {
+    position: absolute;
+    top: $topNavHeight;
+    left: 0;
+    width: 100%;
+    padding-bottom: 5em;
+    &--side {
+      top: 0;
+      left: $sideNavWidth;
+      width: calc(100% - #{$sideNavWidth});
+    }
+  }
+  &__footer {
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: -1px 0 8px 0 rgba(0, 0, 0, 0.15);
+    z-index: $z-index-1;
+  }
+}
+.center-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-max {
+    margin-left: auto;
+    margin-right: auto;
+    &--form {
+      padding-bottom: 6em;
+    }
+    &--footer {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    @include MQ(S) {
+        // max-width: 95%;
+        padding-top: 1.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    @include MQ(M) {
+        // max-width: 1200px;
+        padding-top: 1.5em;
+        padding-left: 1.25em;
+        padding-right: 1.25em;
+    }
+    @include MQ(L) {
+        // max-width: 1920;
+        padding-top: 1.5em;
+        padding-left: 1.25em;
+        padding-right: 1.25em;
+    }
+}
+
+.width {
+  &--center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &__normal {
+    @include MQ(S) {
+      width: 80%;
+    }
+    @include MQ(M) {
+      width: 75%;
+    }
+    @include MQ(L) {
+      width: 75%;
+    }
+  }
+  &__login {
+    padding: 3em;
+    @include MQ(S) {
+      width: 60%;
+    }
+    @include MQ(M) {
+      width: 30%;
+    }
+    @include MQ(L) {
+      width: 30%;
+    }
+  }
+}
+
+.margin {
+    &__top {
+        &--sm {
+            margin-top: 10px !important;
+        }
+        &--md {
+            margin-top: 15px !important;
+        }
+        &--lg {
+            margin-top: 20px !important;
+        }
+        &--xl {
+            @include MQ(S) {
+                margin-top: 15px;
+            }
+            @include MQ(M) {
+                margin-top: 30px;
+            }
+            @include MQ(L) {
+                margin-top: 40px;
+            }
+            @include MQ(XL) {
+                margin-top: 40px;
+            }
+        }
+        &--xxl {
+            @include MQ(S) {
+                margin-top: 20px;
+            }
+            @include MQ(M) {
+                margin-top: 80px;
+            }
+            @include MQ(L) {
+                margin-top: 80px;
+            }
+            @include MQ(XL) {
+                margin-top: 80px;
+            }
+        }
+    }
+    &__bottom {
+        &--sm {
+            margin-bottom: 10px !important;
+        }
+        &--md {
+            margin-bottom: 15px !important;
+        }
+        &--lg {
+            margin-bottom: 20px !important;
+        }
+        &--xl {
+            margin-bottom: 40px !important;
+        }
+        &--xxl {
+            margin-bottom: 80px !important;
+        }
+    }
+    &__right {
+        &--sm {
+            margin-right: 10px !important;
+        }
+        &--md {
+            margin-right: 15px !important;
+        }
+        &--lg {
+            margin-right: 20px !important;
+        }
+        &--xl {
+            margin-right: 40px !important;
+        }
+        &--xxl {
+            margin-right: 80px !important;
+        }
+    }
+    &__left {
+        &--sm {
+            margin-left: 10px !important;
+        }
+        &--md {
+            margin-left: 15px !important;
+        }
+        &--lg {
+            margin-left: 20px !important;
+        }
+        &--xl {
+            margin-left: 40px !important;
+        }
+        &--xxl {
+            margin-left: 80px !important;
+        }
+    }
+}
+
+.padding {
+    &__top {
+        &--sm {
+            padding-top: 10px !important;
+        }
+        &--md {
+            padding-top: 15px !important;
+        }
+        &--lg {
+            padding-top: 20px !important;
+        }
+        &--xl {
+            @include MQ(S) {
+                padding-top: 15px;
+            }
+            @include MQ(M) {
+                padding-top: 30px;
+            }
+            @include MQ(L) {
+                padding-top: 40px;
+            }
+            @include MQ(XL) {
+                padding-top: 40px;
+            }
+        }
+        &--xxl {
+            @include MQ(S) {
+                padding-top: 20px;
+            }
+            @include MQ(M) {
+                padding-top: 80px;
+            }
+            @include MQ(L) {
+                padding-top: 80px;
+            }
+            @include MQ(XL) {
+                padding-top: 80px;
+            }
+        }
+    }
+    &__bottom {
+        &--sm {
+            padding-bottom: 10px !important;
+        }
+        &--md {
+            padding-bottom: 15px !important;
+        }
+        &--lg {
+            padding-bottom: 20px !important;
+        }
+        &--xl {
+            padding-bottom: 40px !important;
+        }
+        &--xxl {
+            padding-bottom: 80px !important;
+        }
+    }
+    &__right {
+        &--sm {
+            padding-right: 10px !important;
+        }
+        &--md {
+            padding-right: 15px !important;
+        }
+        &--lg {
+            padding-right: 20px !important;
+        }
+        &--xl {
+            padding-right: 40px !important;
+        }
+        &--xxl {
+            padding-right: 80px !important;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+
+.btn, button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  &--default {
+    border: none;
+    background-color: transparent;
+  }
+  &--normal {
+    text-align: left;
+    padding-left: 5px !important;
+  }
+  &--white {
+    color: white !important;
+  }
+  &--block {
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,34 @@
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+
+fieldset {
+  margin: 0 0 0.75em 0;
+  padding: 0;
+  border: 0;
+}
+
+input, textarea {
+  width: 100%;
+  border: 1px solid $lightGrey;
+  padding: 8px 12px;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px !important;
+}
+
+label {
+  button {
+    margin-left: 1.0em;
+  }
+}
+
+sub {
+  display: block;
+  bottom: 0;
+}

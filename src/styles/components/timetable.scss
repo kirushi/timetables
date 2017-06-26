@@ -1,0 +1,124 @@
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+
+.timetable {
+  padding: 1.25em;
+  &--expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    overflow-y: auto;
+  }
+  &__header {
+    font-size: 2.4rem;
+    font-weight: $fontRegular;
+    margin-bottom: 1em;
+    position: relative;
+  }
+  &__actionBar {
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    button {
+      &:not(:last-child) {
+        margin-right: 0.75em;
+      }
+    }
+    .pt-button[class*="pt-icon-"]::before {
+      color: black;
+    }
+    .pt-button:not([class*="pt-intent-"]) {
+      background: white;
+    }
+    .pt-button-group {
+      margin-right: 0.75em;
+    }
+  }
+  &__groundZero {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  &__timeCol {
+    display: flex;
+    width: 75px;
+    flex-direction: column;
+    border-right: 1px solid $lightGrey;
+    border-left: 1px solid $lightGrey;
+  }
+  &__timeCell {
+    font-size: 1.2rem;
+    height: 75px;
+    text-align: right;
+    border-bottom: 1px solid $lightGrey;
+    padding-right: 0.5em;
+    padding-top: 0.25em;
+    &:first-child {
+      border-top: 1px solid $lightGrey;
+    }
+    &--small {
+      height: 45px;
+    }
+  }
+  &__daysCol {
+    display: flex;
+    flex-flow: row nowrap;
+    width: calc(100% - 75px);
+  }
+  &__dayCol {
+    flex-grow: 1;
+    border-right: 1px solid $lightGrey;
+    border-bottom: 1px solid $lightGrey;
+    &--active {
+      background-color: aliceblue;
+      .day__header {
+        font-weight: $fontSemiBold;
+      }
+    }
+  }
+}
+
+.day {
+  &__header {
+    min-height: 45px;
+    max-height: 45px;
+    border-top: 1px solid $lightGrey;
+    border-bottom: 1px solid $lightGrey;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: $fontRegular;
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 1em;
+  }
+  &__col {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    &__item {
+      position: absolute;
+      padding: 0.25em;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.item {
+  &__header {
+    font-weight: $fontSemiBold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.4rem;
+  }
+  &__sub {
+    font-weight: $fontRegular;
+    font-size: 1.4rem;
+  }
+}

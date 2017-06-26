@@ -1,0 +1,166 @@
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+
+// SELECT OVERRIDES
+.Select {
+  margin-top: 5px;
+}
+
+.Select-control {
+  height: 40px;
+  border-radius: 3px;
+}
+
+.Select-input {
+  > input {
+    padding: 10px 0 12px;
+  }
+  height: 40px;
+}
+
+.Select-menu-outer {
+  z-index: 1000;
+}
+
+.Select--single > .Select-control .Select-value {
+  padding-top: 0.15em;
+}
+
+.Select-placeholder {
+  line-height: 40px;
+}
+
+.Select--multi {
+  .Select-value {
+    margin-top: 7px;
+  }
+}
+
+// BLUEPRINT OVERRIDES
+.pt-label {
+  &--inline {
+    display: inline-block !important;
+    margin-bottom: 1em !important;
+    margin-right: 1em !important;
+  }
+}
+.tagsContainer {
+  .pt-tag {
+    margin-bottom: 0.75em;
+    &:not(:last-child) {
+      margin-right: 0.5em;
+    }
+  }
+}
+.pt-tab {
+  color: #a0a0a0;
+  &:hover {
+    color: white;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.pt-tab:not([aria-selected="true"]) {
+  &:hover {
+    color: white;
+  }
+}
+
+
+.pt-tab[aria-selected="true"] {
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+.pt-timepicker {
+  padding: 0;
+}
+
+.popover-colorpicker {
+  display: block;
+}
+
+.popoverOverride--calendar {
+  position: relative;
+  .pt-popover-target {
+    display: block;
+  }
+  .pt-button[class*="pt-icon-"]::before {
+    font-size: 12px;
+  }
+}
+
+
+.tileLayout {
+  .pt-card {
+    margin-right: 1em;
+    margin-bottom: 1em;
+    &--relative {
+      position: relative;
+      padding-bottom: 2.25em;
+    }
+    &__actionBar {
+      position:absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #ebf1f5;
+      .pt-button {
+        border-radius: 0px;
+      }
+    }
+  }
+}
+
+// BOOTSTRAP OVERRIDES
+.row.no-padding {
+  margin-right:0;
+  margin-left:0;
+}
+.row.no-padding > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+.text-center {
+  text-align: center;
+}
+
+.row.is-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row.is-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+* And with max cross-browser enabled.
+* Nobody should ever write this by hand.
+* Use a preprocesser with autoprefixing.
+*/
+.row.is-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.is-flex > [class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}

@@ -1,0 +1,19 @@
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+
+.vertical__tabs {
+  display: flex;
+  flex-flow: row nowrap;
+  &__nav {
+    display: flex;
+    width: 25%;
+    min-width: 200px;
+    flex-direction: column;
+    border-right: 1px solid $lightGrey;
+    border-left: 1px solid $lightGrey;
+  }
+  &__content {
+    display: block;
+    width: calc(100% - 25%);
+  }
+}

@@ -1,0 +1,76 @@
+@import '../config/variables'; // colors, fonts etc...
+@import '../config/mixins'; // custom mixins
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+header {
+  background-color: white;
+}
+
+.actionBar {
+  padding-left: 1.0em;
+  padding-right: 1.0em;
+  padding-bottom: 1.0em;
+  width: 100%;
+  &--right {
+    text-align: right;
+  }
+  button {
+    &:not(:last-child) {
+      margin-right: 1.0em;
+    }
+  }
+}
+
+.nav {
+  padding-top: 0;
+  padding-bottom: 0;
+    &__link {
+      padding: 1em 1.5em 1em 1.5em;
+      color: $colorBodyFont;
+      display: inline-block;
+      vertical-align: middle;
+      .icon {
+        font-size: 1.45rem;
+        margin-right: 0.75em;
+      }
+      &--border {
+        border-left: 1px solid $lightGrey;
+      }
+      &.logo {
+        font-weight: 600;
+        padding-left: 0em;
+        font-size: 1.6rem;
+      }
+      &.active {
+        background-color: $lightGrey;
+      }
+      &:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+      &--right {
+        float: right;
+        @include MQ(S) {
+          display: none;
+        }
+        @include MQ(M) {
+          display: none;
+        }
+        @include MQ(L) {
+          display: inline-block;
+        }
+        @include MQ(XL) {
+          display: inline-block;
+        }
+      }
+    }
+    &__icon {
+      display: block;
+      padding: 1.0em 1.0em;
+      border-radius: 50%;
+
+    }
+}
