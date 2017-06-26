@@ -28,7 +28,7 @@ class LoginContainer extends Component {
     return (
       <form className="width__login width--center margin__top--xxl" onSubmit={handleSubmit(this.handleLoginSubmit.bind(this))}>
         <div className="pt-card pt-elevation-0">
-          <h3 className="text-center margin__bottom--lg">Greyman Fitness Solutions</h3>
+          <h3 className="text-center margin__bottom--lg">Gym Solutions</h3>
           <hr />
           <div className="margin__bottom--md">
             <label htmlFor="email">Email</label>

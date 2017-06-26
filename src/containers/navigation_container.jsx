@@ -74,7 +74,7 @@ class Navigation extends Component {
   render() {
     return (
       <nav className="nav main__nav container-max">
-        <a onClick={() => { browserHistory.push('/')}} className="nav__link logo">Greyman Fitness Solutions</a>
+        <a onClick={() => { browserHistory.push('/')}} className="nav__link logo">Gym Solutions</a>
         <div className="nav__link--right">
           { this.renderManageSessions() }
           { this.renderManageUsers() }
